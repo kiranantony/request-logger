@@ -16,37 +16,38 @@ First, clone the repository to your local machine:
 ```bash
 git clone https://github.com/kiranantony/request-logger.git
 cd request-logger
-
-2. Configure the Environment
+```
+### 2. Configure the Environment
 
 Ensure you have a .env file in the root of your project directory. If it does not exist, create one by copying the example file:
-
+```bash
 cp .env.example .env
-
+```
 add the necessary values
-
+```bash
 DB_CONNECTION=sqlite
 DB_DATABASE=/var/www/html/db/database.sqlite
-
-3. Build and Start Docker Containers
+```
+### 3. Build and Start Docker Containers
 
 Build the Docker image and start the containers:
-
+```bash
 docker-compose up --build -d
-
+```
 This command will:
 
     Build the Docker image based on the Dockerfile.
     Start the Docker containers defined in docker-compose.yml.
 
-4. Run Migrations
+### 4. Run Migrations
 
 Ensure that the database schema is up-to-date. This is handled automatically during container startup but can be manually run if needed:
-
+```bash
 docker-compose exec app php artisan migrate
-
-5. Access the Application
+```
+### 5. Access the Application
 
 Open your web browser and navigate to:
-
+```bash
 http://localhost:8000
+```
